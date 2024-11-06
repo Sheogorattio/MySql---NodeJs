@@ -1,4 +1,4 @@
-= Project Title
+= Hey!
 
 This project is a Node.js application that utilizes a MySQL database (knp211) with a users table to manage user data.
 
@@ -9,18 +9,21 @@ To run this project, ensure you have a MySQL database set up as follows:
 === Database Name
 
 knp211
+
 === Database Table
 
 Create a users table in your knp211 database using the following schema:
 
 [source,sql]
 CREATE TABLE users ( id char(64) NOT NULL, login varchar(255) NOT NULL, email varchar(255) NOT NULL, password varchar(255) NOT NULL, image varchar(255) NOT NULL, PRIMARY KEY (id), UNIQUE KEY email (email), UNIQUE KEY login (login) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 === Sample Data for users Table
 
 To test the application, you can insert the following sample data into the users table:
 
 [source,sql]
 INSERT INTO users (id, login, email, password, image) VALUES ('195852a875172b1d6cf5bf8604cbb9ea93674ee2cb538ac9a0ab557f70b40606', 'admin', 'password-is-admin@gmail.com', '$2b$10$eaJZeTphamgqLADCST2GQ.7rpRx5.aI3sb8VTAxADa3G7xAAXzrbC', 'admin.jpg'), ('a85f7b357ad9793e7d3d5f8d13a0fe67270ddd222d4571248a5056a9bda11578', 'Angela', 'gossow@arch.com', '$2b$10$/o/.rv0T0zq/9AgZVlmRG.YKP4ozEjuWvuO6jRSRbeHfOh/ZlvUfm', 'Angela.jpg'), ('b0ac5d0ec3c9a2f295be0e791dbaa22e555871ded641e8331b7ae0ec16f73666', 'Amott', 'michael@arch.com', '$2b$10$3cVJ.lm0gwVtP49iR2lFKuJNEy/AJf5M/M/frDJa56SGAb4iXMAwS', 'Amott.jpg');
+
 Admin access: Use admin as the password for the admin account.
 
 == Running the Project
@@ -29,4 +32,5 @@ To start the project, use the following command:
 
 [source,bash]
 nodemon .\src\server.js
+
 Ensure you have all required dependencies installed and that the database connection is correctly configured.
