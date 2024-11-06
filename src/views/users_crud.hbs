@@ -1,0 +1,38 @@
+<h1>List of users</h1>
+<a href="/admin/addUser">Add user</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Login</th>
+      <th scope="col">Email</th>
+      <th scope="col">Photo</th>
+    </tr>
+  </thead>
+  <tbody class="table-striped">   
+    {{#each users}}
+      <tr>
+        <td>
+          <a href="/admin/editUser/:{{login}}" style="outline: none !important; text-decoration: none; color: black; display: block;">
+            {{id}}
+          </a>
+        </td>
+        <td>
+          <a href="/admin/editUser/:{{login}}" style="outline: none !important; text-decoration: none; color: black; display: block;">
+            {{login}}
+          </a>
+        </td>
+        <td>
+          <a href="/admin/editUser/:{{login}}" style="outline: none !important; text-decoration: none; color: black; display: block;">
+            {{email}}
+          </a>
+        </td>
+        <td>
+          <a href="/admin/editUser/:{{login}}" style="outline: none !important; text-decoration: none; color: black; display: block;">
+            <img src="/{{image}}" width="50px" height="50px" alt="{{login}}" />
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
